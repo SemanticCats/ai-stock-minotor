@@ -18,7 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install akshare==1.14.55 pandas requests
+          pip install akshare pandas requests
 
       - name: Run Monitor
         env:
