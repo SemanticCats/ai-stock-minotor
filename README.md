@@ -70,7 +70,7 @@ git clone https://github.com/SemanticCats/ai-stock-monitor.git
 cd ai-stock-monitor
 
 # 2. 安装依赖
-pip install akshare==1.14.55 pandas requests
+pip install akshare pandas requests
 
 # 3. 设置环境变量（Linux/macOS）
 export SERVERCHAN_SCKEY='你的SCKEY'
