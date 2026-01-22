@@ -1,0 +1,26 @@
+name: A股每日盯盘（无Tushare版）
+
+on:
+  schedule:
+    - cron: '30 7 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install akshare==1.14.55 pandas requests
+
+      - name: Run Monitor
+        env:
+          SERVERCHAN_SCKEY: ${{ secrets.SERVERCHAN_SCKEY }}
+        run: python main.py
